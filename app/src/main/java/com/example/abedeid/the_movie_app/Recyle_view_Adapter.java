@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -21,6 +20,7 @@ public class Recyle_view_Adapter extends RecyclerView.Adapter<Recyle_view_Adapte
     String poster;
     List<Movie> movieList;
     Context context;
+    private final static String API_KEY = "78bf6a2ef253cfbbb8e3067ab8956a4b";
 
     public Recyle_view_Adapter(Context context, List<Movie> movieList) {
         this.movieList = movieList;
@@ -37,17 +37,18 @@ public class Recyle_view_Adapter extends RecyclerView.Adapter<Recyle_view_Adapte
 
     @Override
     public void onBindViewHolder(MyHolder holder, final int position) {
-
-        poster = "http://image.tmdb.org/t/p/w500/" + movieList.get(position).getPosterPath();
+       // videos
+        poster = "http://image.tmdb.org/t/p/w320/" + movieList.get(position).getPosterPath();
         Picasso.with(context).load(poster).into(holder.imageView);
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //new activity
                 Intent i = new Intent(context, details.class);
+                Integer id = movieList.get(position).getId();
+                data_pass d=new data_pass(id);
                 context.startActivity(i);
-                data_pass d = new data_pass(movieList.get(position).getTitle(),"http://image.tmdb.org/t/p/w320/"+movieList.get(position).getPosterPath(),movieList.get(position).getReleaseDate().substring(1,4),movieList.get(position).getRuntime()+" min",movieList.get(position).getVoteAverage()+"");
-                Toast.makeText(context, movieList.get(position).getOriginalTitle(), Toast.LENGTH_SHORT).show();
+
             }
         });
     }
@@ -69,3 +70,4 @@ public class Recyle_view_Adapter extends RecyclerView.Adapter<Recyle_view_Adapte
         }
     }
 }
+

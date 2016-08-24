@@ -7,11 +7,11 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Movie {
 
+    @SerializedName("id")
+    private Integer id;
+
     @SerializedName("poster_path")
     private String posterPath;
-
-    @SerializedName("adult")
-    private boolean adult;
 
     @SerializedName("overview")
     private String overview;
@@ -19,47 +19,22 @@ public class Movie {
     @SerializedName("release_date")
     private String releaseDate;
 
-
     @SerializedName("runtime")
     private Integer runtime;
 
     @SerializedName("original_title")
     private String originalTitle;
 
-    @SerializedName("original_language")
-    private String originalLanguage;
-
-    @SerializedName("title")
-    private String title;
-
-    @SerializedName("backdrop_path")
-    private String backdropPath;
-
-    @SerializedName("popularity")
-    private Double popularity;
-
-    @SerializedName("vote_count")
-    private Integer voteCount;
-
-    @SerializedName("video")
-    private Boolean video;
 
     @SerializedName("vote_average")
     private Double voteAverage;
-    public Movie(String posterPath, boolean adult, String overview, String releaseDate, Integer runtime, String originalTitle, String originalLanguage, String title, String backdropPath, Double popularity, Integer voteCount, Boolean video, Double voteAverage) {
-        this.posterPath = posterPath;
-        this.adult = adult;
-        this.overview = overview;
-        this.releaseDate = releaseDate;
-        this.runtime = runtime;
-        this.originalTitle = originalTitle;
-        this.originalLanguage = originalLanguage;
-        this.title = title;
-        this.backdropPath = backdropPath;
-        this.popularity = popularity;
-        this.voteCount = voteCount;
-        this.video = video;
-        this.voteAverage = voteAverage;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public Integer getRuntime() {
+        return runtime;
     }
 
     public String getPosterPath() {
@@ -70,13 +45,6 @@ public class Movie {
         this.posterPath = posterPath;
     }
 
-    public boolean isAdult() {
-        return adult;
-    }
-
-    public void setAdult(boolean adult) {
-        this.adult = adult;
-    }
 
     public String getOverview() {
         return overview;
@@ -94,11 +62,11 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
-    public Integer getRuntime() {
+    public Integer getruntime() {
         return runtime;
     }
 
-    public void setRuntime(Integer runtime) {
+    public void setruntime(Integer runtime) {
         this.runtime = runtime;
     }
 
@@ -108,54 +76,6 @@ public class Movie {
 
     public void setOriginalTitle(String originalTitle) {
         this.originalTitle = originalTitle;
-    }
-
-    public String getOriginalLanguage() {
-        return originalLanguage;
-    }
-
-    public void setOriginalLanguage(String originalLanguage) {
-        this.originalLanguage = originalLanguage;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getBackdropPath() {
-        return backdropPath;
-    }
-
-    public void setBackdropPath(String backdropPath) {
-        this.backdropPath = backdropPath;
-    }
-
-    public Double getPopularity() {
-        return popularity;
-    }
-
-    public void setPopularity(Double popularity) {
-        this.popularity = popularity;
-    }
-
-    public Integer getVoteCount() {
-        return voteCount;
-    }
-
-    public void setVoteCount(Integer voteCount) {
-        this.voteCount = voteCount;
-    }
-
-    public Boolean getVideo() {
-        return video;
-    }
-
-    public void setVideo(Boolean video) {
-        this.video = video;
     }
 
     public Double getVoteAverage() {

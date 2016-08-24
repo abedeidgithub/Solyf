@@ -1,7 +1,7 @@
 package com.example.abedeid.the_movie_app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class details extends AppCompatActivity {
 
@@ -12,4 +12,7 @@ public class details extends AppCompatActivity {
 
 
     }
+
+
+
 }
